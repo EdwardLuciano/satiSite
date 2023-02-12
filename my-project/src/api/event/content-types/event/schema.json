@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date",
+      "unique": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "buttonActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "place": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string",
+      "regex": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+    }
+  }
+}
