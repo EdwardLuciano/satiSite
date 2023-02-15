@@ -36,6 +36,6 @@ jobs:
         PORT: 22
         KEY: ${{ secrets.SSH }}
       with: 
-        source: "build"
+        source: "build,my-project"
         target: "/var/www/sati.show"
         strip_components: 1
