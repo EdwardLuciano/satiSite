@@ -78,5 +78,5 @@ jobs:
         PORT: 22
         KEY: ${{ secrets.SSH }}
       with: 
-        source: ""
+        source: "./*"
         target: "/var/www/sati.show"
