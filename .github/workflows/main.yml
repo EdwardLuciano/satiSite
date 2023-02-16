@@ -56,7 +56,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: ls
     - run: cd my-project
+    - run: ls
     - run: npm ci
     - run: npm run build
     - uses: appleboy/scp-action@master
