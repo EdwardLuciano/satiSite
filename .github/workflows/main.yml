@@ -61,16 +61,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       run: |
         ls
-    
-    - uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
         
-    - run: npm ci
-    
-    - run: npm run build
-    
     - uses: appleboy/scp-action@master
       env:
         HOST: '46.19.67.46'
