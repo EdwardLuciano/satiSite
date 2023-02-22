@@ -69,6 +69,9 @@ jobs:
         key: ${{ secrets.SSH }}
         port: 22
         script: |
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          npm --help
           forever stopall
           rm -r /var/www/sati.show/my-project
           
@@ -89,6 +92,9 @@ jobs:
         key: ${{ secrets.SSH }}
         port: 22
         script: |
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          npm --help
           cd /var/www/sati.show
           ls -la
           chown -R root:root .
