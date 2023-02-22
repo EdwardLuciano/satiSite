@@ -36,10 +36,17 @@ body {
 .content {
   flex-grow: 1;
 }
+.containerDefault {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1rem;
+  max-width: 922px;
+  justify-content: flex-end;
+}
 .logo {
   width: 256px;
   height: auto;
-  padding-top: 80px;
+  padding-top: 65px;
   margin: 0 auto;
   margin-bottom: 80px;
 }
@@ -154,7 +161,10 @@ background: linear-gradient(137.43deg, #E64BB6 -11.36%, #FFC12D 204.22%);
   padding-right: 3rem;
   padding-left: 3rem;
 }
-.footer__contacts a {
+.footer__contacts {
+  display: flex;
+}
+.footer__contacts > .email > a {
   font-family: 'HeliosExt';
   font-weight: 700;
   font-size: 1rem;
@@ -174,6 +184,31 @@ background: linear-gradient(137.43deg, #E64BB6 -11.36%, #FFC12D 204.22%);
   margin-top: .2rem;
   display: block;
 }
+.internationalization {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+.internationalization__locale {
+    font-weight: 700;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-top: 0.2rem;
+    display: block;
+}
+.internationalization__locale.active {
+  background: linear-gradient(137.43deg, #FFC12D -11.36%, #E64BB6 204.22%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.internationalization__locale:last-child {
+  margin-left: 0.2rem;
+}
+
 @media (max-width: 834px) {
   .event__info_title {
     font-size: 1.125rem;
@@ -188,6 +223,11 @@ background: linear-gradient(137.43deg, #E64BB6 -11.36%, #FFC12D 204.22%);
     height: auto;
     padding-top: 48px;
     margin-bottom: 64px;
+  }
+  .containerDefault {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
   }
   .events {
     padding-right: 1.142rem;
@@ -216,5 +256,9 @@ background: linear-gradient(137.43deg, #E64BB6 -11.36%, #FFC12D 204.22%);
   }
   .footer {
     padding-top: 2.5rem;
+  }
+  .internationalization {
+    padding-right: 1.142rem;
+    padding-left: 1.142rem;
   }
 }
