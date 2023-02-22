@@ -62,6 +62,20 @@ jobs:
       run: |
         ls
         
+    - uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: '46.19.67.46'
+        username: 'root'
+        key: ${{ secrets.SSH }}
+        port: 22
+        script: |
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          npm --help
+          forever stopall
+          cd /var/www/sati.show/my-project
+          rm -rf *
+          
     - uses: appleboy/scp-action@master
       env:
         HOST: '46.19.67.46'
@@ -79,7 +93,14 @@ jobs:
         key: ${{ secrets.SSH }}
         port: 22
         script: |
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          npm --help
           cd /var/www/sati.show
           ls -la
           chown -R root:root .
           ls -la
+          cd my-project
+          npm install
+          npm run build
+          forever start --minUptime 1000 --spinSleepTime 1000 -c "npm run develop" ./
