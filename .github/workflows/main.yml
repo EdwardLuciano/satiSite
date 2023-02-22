@@ -74,6 +74,7 @@ jobs:
           forever stopall
           cd /var/www/sati.show/my-project
           rm -rf *
+          rm -rf .cache
           
     - uses: appleboy/scp-action@master
       env:
