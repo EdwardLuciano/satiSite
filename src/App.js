@@ -18,7 +18,7 @@ function App() {
   const [preload, setPreload] = useState(true)
   const apiURL = "https://admin.sati.show/api/events?sort=date";
 
-  useEffect(() => {   
+  useEffect(() => {    
         
       getEvents();
       const onPageLoad = () => {
