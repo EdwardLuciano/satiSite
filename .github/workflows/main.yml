@@ -71,7 +71,6 @@ jobs:
         script: |
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
-          npm --help
           forever stopall
           cd /var/www/sati.show/my-project
           rm -rf *
@@ -95,12 +94,9 @@ jobs:
         script: |
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
-          npm --help
           cd /var/www/sati.show
-          ls -la
           chown -R root:root .
-          ls -la
           cd my-project
           npm install
           npm run build
-          forever start --minUptime 1000 --spinSleepTime 1000 -c "npm run develop" ./
+          forever start --minUptime 1000 --spinSleepTime 1000 -c "npm start" ./
