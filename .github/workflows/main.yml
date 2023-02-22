@@ -71,3 +71,15 @@ jobs:
       with: 
         source: "./*"
         target: "/var/www/sati.show"
+        
+    - uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: '46.19.67.46'
+        username: 'root'
+        key: ${{ secrets.SSH }}
+        port: 22
+        script: |
+          cd /var/www/sati.show
+          ls -la
+          chown -R root:root .
+          ls -la
