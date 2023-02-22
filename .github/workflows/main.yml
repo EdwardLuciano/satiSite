@@ -74,7 +74,7 @@ jobs:
           npm --help
           forever stopall
           cd /var/www/sati.show/my-project
-          rm -r *!(.tmp)
+          rm -rf *
           
     - uses: appleboy/scp-action@master
       env:
