@@ -69,6 +69,7 @@ jobs:
         key: ${{ secrets.SSH }}
         port: 22
         script: |
+          source ~/.bashrc
           forever stopall
           rm -r /var/www/sati.show/my-project
           
@@ -89,6 +90,7 @@ jobs:
         key: ${{ secrets.SSH }}
         port: 22
         script: |
+          source ~/.bashrc
           cd /var/www/sati.show
           ls -la
           chown -R root:root .
