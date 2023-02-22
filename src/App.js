@@ -13,12 +13,12 @@ import am from './icons/am.svg';
 import './App.css';
 import {
   Routes,
-  Route, 
+  Route,  
 } from 'react-router-dom';
 import { useLocation, Link } from 'react-router-dom';
 
 
-function App() {
+function App() {  
   const [events, setEvents] = useState([]); 
   const [preload, setPreload] = useState(true)
   const locate = useLocation();
