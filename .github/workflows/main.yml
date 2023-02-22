@@ -73,7 +73,8 @@ jobs:
           source ~/.nvm/nvm.sh
           npm --help
           forever stopall
-          rm -r /var/www/sati.show/my-project
+          cd /var/www/sati.show/my-project
+          rm -r *!(.tmp)
           
     - uses: appleboy/scp-action@master
       env:
