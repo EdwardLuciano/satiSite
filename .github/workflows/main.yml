@@ -33,7 +33,7 @@ jobs:
     
     - run: npm run build
     
-    - uses: appleboy/scp-action@master
+    - uses: appleboy/scp-action@v0.1.4
       env:
         HOST: '46.19.67.46'
         USERNAME: 'root'
@@ -62,7 +62,7 @@ jobs:
       run: |
         ls
         
-    - uses: appleboy/ssh-action@v0.1.7
+    - uses: appleboy/scp-action@v0.1.4
       with:
         host: '46.19.67.46'
         username: 'root'
@@ -76,7 +76,7 @@ jobs:
           rm -rf *
           rm -rf .cache
           
-    - uses: appleboy/scp-action@master
+    - uses: appleboy/scp-action@v0.1.4
       env:
         HOST: '46.19.67.46'
         USERNAME: 'root'
