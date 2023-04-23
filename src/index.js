@@ -4,13 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
+const theme = extendTheme({
+  fonts: {
+    body: "HeliosExt",
+    heading: "HeliosExt",
+    helveticaLight: "Helvetica Neue Light",
+    helveticaBold: "Helvetica Neue Bold",
+    comfortaa: "Comfortaa"
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+        <ChakraProvider theme={theme}>
+
       <App />
+      </ChakraProvider>
+
     </BrowserRouter>
   </React.StrictMode>
 );
